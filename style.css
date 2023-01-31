@@ -46,6 +46,8 @@ This theme, like WordPress, is licensed under the GPL
     --measure: 56em;
     --heading-border: 3px solid;
     --footer-border: 3px solid;
+    --primary: black;
+    --secondary: white;
     --accent: #CF008D;
     --success: #118200;
     --information: #0B70DB;
@@ -91,7 +93,7 @@ main {
 
 .site-id h1 a {
     text-decoration: none;
-    color: black;
+    color: var(--primary);
 }
 
 .site-id {
@@ -127,7 +129,7 @@ nav a:hover {
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-decoration-style: solid;
-    text-decoration-color: black;
+    text-decoration-color: var(--primary);
 }
 
 .hero {
@@ -191,10 +193,10 @@ main h1 {
 
 .woocommerce [role=alert],
 .woocommerce .woocommerce-info {
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--secondary);
+    border: 1px solid var(--primary);
     font-family: "SwitzerBold", sans-serif;
-    color: black;
+    color: var(--primary);
 }
 
 /* GENERAL */
@@ -207,7 +209,7 @@ main h1 {
     color: var(--accent);
     font-family: "SwitzerBold", sans-serif;
     text-decoration-thickness: 2px;
-    text-decoration-color: black;
+    text-decoration-color: var(--primary);
 }
 
 .woocommerce a::after {
@@ -224,9 +226,9 @@ main h1 {
 
 .woocommerce .button.wp-element-button {
     font-family: "SwitzerBold";
-    color: black;
-    background-color: white;
-    border: 2px solid black;
+    color: var(--primary);
+    background-color: var(--secondary);
+    border: 2px solid var(--primary);
     border-radius: 5px;
 }
 
@@ -234,16 +236,16 @@ main h1 {
 .woocommerce button.button:disabled:hover, 
 .woocommerce button.button:disabled[disabled]:hover {
     background-color: unset;
-    color: black;    
+    color: var(--primary);    
 }
 
 .woocommerce .button.alt.wp-element-button {
-    background-color: black;
+    background-color: var(--primary);
 }
 
 .woocommerce button.button.alt.disabled,
 .woocommerce button.button.alt.disabled:hover {
-    background-color: black;
+    background-color: var(--primary);
     color: #FFF;
 }
 
@@ -266,7 +268,7 @@ main h1 {
 }
 
 .woocommerce .price > * {
-    color: black;
+    color: var(--primary);
 }
 
 /* PRODUCT */
@@ -289,8 +291,8 @@ main h1 {
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
     border: unset;
-    background-color: white;
-    color: black;
+    background-color: var(--secondary);
+    color: var(--primary);
     display: unset;
     position: unset;
     border-radius: 0px;
@@ -299,8 +301,8 @@ main h1 {
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    background-color: black;
-    color: white;
+    background-color: var(--primary);
+    color: var(--secondary);
 }
 
 .woocommerce .amount {
