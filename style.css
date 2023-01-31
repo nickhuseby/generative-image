@@ -241,6 +241,12 @@ main h1 {
     background-color: black;
 }
 
+.woocommerce button.button.alt.disabled,
+.woocommerce button.button.alt.disabled:hover {
+    background-color: black;
+    color: #FFF;
+}
+
 .woocommerce table th {
     font-family: "SwitzerBold", sans-serif;
     font-weight: bold;
@@ -273,6 +279,43 @@ main h1 {
 
 .woocommerce .related.products {
     clear: both;
+}
+
+.woocommerce .woocommerce-variation-add-to-cart {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border: unset;
+    background-color: white;
+    color: black;
+    display: unset;
+    position: unset;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 1em;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background-color: black;
+    color: white;
+}
+
+.woocommerce .amount {
+    color: var(--accent);
+    font-size: 16px;
+    font-family: 'SwitzerBold', sans-serif;
+}
+
+.woocommerce .summary > * + * {
+    margin-top: 1em;
+}
+
+.woocommerce div.product form.cart .variations select {
+    border: unset;
+    border-bottom: 2px solid var(--accent);
 }
 
 @media (max-width: 768px) {
