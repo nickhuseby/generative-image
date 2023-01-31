@@ -1,0 +1,308 @@
+/*
+Theme Name: Generative Image
+Author: Nick Huseby
+Description: Wordpress/WooCommerce Theme for Generative Image store
+Template: oranaut-base
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: generative-image
+This theme, like WordPress, is licensed under the GPL
+*/
+
+@font-face {
+    font-family: "Switzer";
+    src: url('fonts/switzer/Switzer-Light.woff2') format('woff2'), url('fonts/switzer/Switzer-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SwitzerBold";
+    src: url('fonts/switzer/Switzer-Bold.woff2') format('woff2'), url('fonts/switzer/Switzer-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SwitzerItalic";
+    src: url('fonts/switzer/Switzer-LightItalic.woff2') format('woff2'), url('fonts/switzer/Switzer-LightItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url('fonts/outfit/Outfit-SemiBold.woff2') format('woff2'), url('fonts/outfit/Outfit-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --italic-font: "SwitzerItalic", sans-serif;
+    --bold-font: "SwitzerBold", sans-serif;
+    --body-font: "Switzer", sans-serif;
+    --heading-font: "Outfit", sans-serif;
+    --measure: 56em;
+    --heading-border: 3px solid;
+    --footer-border: 3px solid;
+    --accent: #CF008D;
+    --success: #118200;
+    --information: #0B70DB;
+    --gutter: calc((100% - var(--measure)) / 2);
+}
+
+/* LAYOUT */
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: var(--body-font);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    margin-bottom: var(--s0);
+}
+
+header h1 {
+    margin-bottom: 0px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* HEADING */
+
+.site-id, nav {
+    padding: var(--s1);
+}
+
+.site-id h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.site-id {
+    border-right: var(--heading-border);
+    min-width: var(--gutter);
+    justify-content: flex-end;
+}
+
+
+
+.site-header {
+    padding: 0px;
+    border-bottom: var(--heading-border);
+}
+
+.site-header nav {
+    min-width: var(--gutter);
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+nav a {
+    font-family: var(--bold-font);
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+}
+
+.hero {
+    width: 100%;
+    max-width: none;
+    max-height: 50vh;
+    object-position: center center;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .site-id {
+        width: 100%;
+        justify-content: center;
+        border-right: none;
+    }
+    #mobile-nav-button {
+        font-family: 'SwitzerBold';
+        font-weight: bold;
+        border : var(--heading-border);
+    }
+    #mobile-nav-button:hover {
+        color: var(--accent);
+        border: 3px solid var(--accent);
+    }
+
+}
+
+/* BODY */
+
+em {
+    font-family: var(--italic-font);
+    font-style: italic;
+}
+
+b {
+    font-family: var(--bold-font);
+    font-weight: bold;
+}
+
+main h1 {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--accent);
+}
+
+/* WOOCOMMERCE */
+
+/* ALERTS */
+
+.woocommerce .woocommerce-error::before {
+    color: var(--accent);
+}
+
+.woocommerce .woocommerce-info::before {
+    color: var(--information);
+}
+
+.woocommerce .woocommerce-message::before {
+    color: var(--success);
+}
+
+.woocommerce [role=alert],
+.woocommerce .woocommerce-info {
+    background-color: white;
+    border: 1px solid black;
+    font-family: "SwitzerBold", sans-serif;
+    color: black;
+}
+
+/* GENERAL */
+
+.woocommerce h1 a {
+    font-family: var(--heading-font);
+}
+
+.woocommerce a {
+    color: var(--accent);
+    font-family: "SwitzerBold", sans-serif;
+    text-decoration-thickness: 2px;
+    text-decoration-color: black;
+}
+
+.woocommerce a::after {
+    content: '' !important;
+}
+
+.woocommerce a.remove {
+    color: var(--accent) !important;
+}
+
+.woocommerce a.remove:hover {
+    background-color: var(--accent) !important;
+}
+
+.woocommerce .button.wp-element-button {
+    font-family: "SwitzerBold";
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.woocommerce .button.wp-element-button:hover,
+.woocommerce button.button:disabled:hover, 
+.woocommerce button.button:disabled[disabled]:hover {
+    background-color: unset;
+    color: black;    
+}
+
+.woocommerce .button.alt.wp-element-button {
+    background-color: black;
+}
+
+.woocommerce table th {
+    font-family: "SwitzerBold", sans-serif;
+    font-weight: bold;
+}
+
+/* CART */
+
+.woocommerce .cart-collaterals .cart_totals {
+    float: unset;
+    width: max-content;
+}
+
+/* SHOP */
+
+.woocommerce .orderby {
+    border: none;
+}
+
+.woocommerce .price > * {
+    color: black;
+}
+
+/* PRODUCT */
+
+.woocommerce div.product .woocommerce-tabs {
+    width: 48%;
+    float: right;
+    clear: none;
+}
+
+.woocommerce .related.products {
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .woocommerce div.product .woocommerce-tabs {
+        width: 100%;
+        float: none;
+    }
+}
+
+/* FOOTER */
+footer.box.site-footer {
+    padding: 0;
+}
+
+footer .cluster {
+    border-top: var(--footer-border);
+    align-items: stretch;
+}
+
+footer .cluster > div {
+    min-width: var(--gutter);
+    text-align: right;
+    padding: var(--s1);
+}
+
+footer .cluster nav {
+    margin-left: auto;
+    min-width: var(--gutter);
+}
+
+footer .cluster nav > * {
+    margin: 0 auto;
+}
