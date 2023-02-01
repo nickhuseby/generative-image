@@ -5,6 +5,7 @@ if ( !defined('ABSPATH')  ) {
 }
 
 include get_stylesheet_directory() . '/inc/customizer.php'; // Customizer Options
+include get_stylesheet_directory() . '/inc/wc_customizations.php'; // WC Customizations
 
 function gen_img_enqueue_styles() {
 	$parenthandle = 'oranaut-base-style';
@@ -23,5 +24,3 @@ function gen_img_enqueue_styles() {
 	);
 }
 add_action('wp_enqueue_scripts', 'gen_img_enqueue_styles');
-
-// add_filter( 'woocommerce_enqueue_styles', '__return_false' );
