@@ -22,5 +22,6 @@ function gen_img_enqueue_styles() {
 		array(), 
 		$theme->parent()->get('Version')
 	);
+	wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'gen_img_enqueue_styles');
