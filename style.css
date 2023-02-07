@@ -132,6 +132,50 @@ nav a:hover {
     text-decoration-color: var(--primary);
 }
 
+a.cart-contents .cart-contents-count::before, 
+.woocommerce a.cart-contents .cart-contents-count::before {
+    content: '\f174';
+    font-family: 'dashicons';
+    font-size: var(--s1);
+}
+
+a.cart-contents .cart-contents-count,
+.woocommerce a.cart-contents .cart-contents-count {
+    display: flex;
+    align-items: center;
+}
+
+a.cart-contents,
+.woocommerce a.cart-contents {
+    color: black;
+    text-decoration: none;
+}
+
+a.cart-contents:hover,
+.woocommerce a.cart-contents:hover {
+    text-decoration: none;
+}
+
+a.account::before,
+.woocommerce a.account::before {
+    content: '\f110';
+    font-family: 'dashicons';
+    font-size: var(--s1);
+}
+
+a.account,
+.woocommerce a.account {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+a.account:hover,
+.woocommerce a.account {
+    text-decoration: none;
+}
+
 .hero {
     width: 100%;
     max-width: none;
@@ -239,7 +283,8 @@ main h1 {
     color: var(--primary);    
 }
 
-.woocommerce .button.alt.wp-element-button {
+.woocommerce .button.alt.wp-element-button,
+.woocommerce .button.alt.wp-element-button:hover {
     background-color: var(--primary);
 }
 
@@ -252,6 +297,12 @@ main h1 {
 .woocommerce table th {
     font-family: "SwitzerBold", sans-serif;
     font-weight: bold;
+}
+
+.woocommerce form .form-row .input-text {
+    padding: var(--s-3);
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 /* CART */
@@ -324,6 +375,40 @@ main h1 {
         width: 100%;
         float: none;
     }
+}
+
+/* ACCOUNT */
+
+.woocommerce-account nav.woocommerce-MyAccount-navigation {
+    float: none;
+    width: 100%;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+    float: none;
+    width: 100%;
+}
+
+nav.woocommerce-MyAccount-navigation > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space, 1rem);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav.woocommerce-MyAccount-navigation .is-active a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+}
+
+nav.woocommerce-MyAccount-navigation li a,
+nav.woocommerce-MyAccount-navigation li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--primary);
 }
 
 /* FOOTER */
