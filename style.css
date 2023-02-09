@@ -102,8 +102,6 @@ main {
     justify-content: flex-end;
 }
 
-
-
 .site-header {
     padding: 0px;
     border-bottom: var(--heading-border);
@@ -217,6 +215,84 @@ main h1 {
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-decoration-color: var(--accent);
+}
+
+/* FRONT PAGE */
+
+.animated {
+    display: flex;
+    min-height: 675px;
+}
+
+.animated-subject {
+    display: none;
+}
+
+#circles {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1200px;
+    height: 675px;
+    align-self: center;
+    margin: 0 auto;
+    animation: 1s circleIn linear forwards;
+    opacity: 0;
+}
+
+#circles circle {
+    stroke: var(--accent);
+    fill: var(--accent);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: inherit;
+    fill-opacity: inherit;
+}
+
+@keyframes circleIn {
+    from {
+        opacity: 1;
+        stroke-dasharray: 0 100;
+        fill-opacity: 0;
+    }
+    to {
+        opacity: 1;
+        stroke-dasharray: 100 100;
+        fill-opacity: 0.15;
+    }
+}
+
+#triangles {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1200px;
+    height: 675px;
+    align-self: center;
+    margin: 0 auto;
+    animation: 1s triangleIn linear forwards;
+    opacity: 0;
+}
+
+#triangles polygon {
+    stroke: var(--accent);
+    stroke-width: 1px;
+    stroke-linecap: round;
+    fill: var(--accent);
+    fill-opacity: inherit;
+    stroke-dasharray: 100;
+    stroke-dashoffset: inherit;
+}
+
+@keyframes triangleIn {
+    from {
+        opacity: 1;
+        stroke-dashoffset: -100;
+        fill-opacity: 0;
+    }
+    to {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        fill-opacity: 0.01;
+    }
 }
 
 /* WOOCOMMERCE */
@@ -356,7 +432,8 @@ main h1 {
     color: var(--secondary);
 }
 
-.woocommerce .amount {
+.woocommerce .amount,
+.amount {
     font-size: 16px;
     font-family: 'SwitzerBold', sans-serif;
 }
