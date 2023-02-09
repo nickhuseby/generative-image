@@ -51,13 +51,16 @@ This theme, like WordPress, is licensed under the GPL
     --accent: #CF008D;
     --success: #118200;
     --information: #0B70DB;
-    --gutter: calc((100% - var(--measure)) / 2);
+    --scrollbar: 0px;
+    --gutter: calc((100vw - 100% + var(--scrollbar)) / 2);
+    --full-width: calc((100vw));
 }
 
 /* LAYOUT */
 
 html {
     height: 100%;
+    --full-width: calc(100% + 1px - 1px);
 }
 
 body {
@@ -180,6 +183,7 @@ a.account:hover,
     max-height: 50vh;
     object-position: center center;
     object-fit: cover;
+    border-bottom: 3px solid var(--primary);
 }
 @media (max-width: 900px) {
     .site-id {
@@ -218,6 +222,34 @@ main h1 {
 }
 
 /* FRONT PAGE */
+
+.hero-lead {
+    margin-top: calc(var(--space) * -1);
+    padding-top: var(--s2);
+    background-color: var(--primary);
+    color: white;
+    max-width: var(--full-width);
+    width: 100vw;
+    margin-left: calc(var(--gutter) * -1);
+    padding-left: calc(var(--gutter) + calc(var(--s-1)/2));
+    padding-right: calc(var(--gutter) + calc(var(--s-1)/2));
+    overflow: hidden;
+}
+
+.hero-text {
+    margin-top: 0;
+    padding-top: var(--space);
+    background-color: black;
+    color: white;
+    padding-bottom: var(--s2);
+    max-width: var(--full-width);
+    width: 100vw;
+    margin-block-start: 0px;
+    margin-left: calc(var(--gutter) * -1);
+    padding-left: calc(var(--gutter) + calc(var(--s0) / 2));
+    padding-right: calc(var(--gutter) + calc(var(--s0) / 2));
+    box-sizing: border-box;
+}
 
 .animated {
     display: flex;
@@ -293,6 +325,23 @@ main h1 {
         stroke-dashoffset: 0;
         fill-opacity: 0.01;
     }
+}
+
+.wc-block-grid__product .wc-block-grid__product-link {
+    text-decoration: none;
+}
+
+.wc-block-grid__product .add_to_cart_button {
+    font-family: "SwitzerBold";
+    color: var(--primary);
+    background-color: var(--secondary);
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+}
+
+.wc-block-grid__product .wc-block-grid__product-title {
+    font-family: "SwitzerBold";
+    color: var(--accent);
 }
 
 /* WOOCOMMERCE */

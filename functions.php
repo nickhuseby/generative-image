@@ -32,6 +32,10 @@ function gen_img_enqueue_styles() {
 		array(), 
 		$theme->parent()->get('Version')
 	);
+	wp_enqueue_script('theme-script', get_stylesheet_directory_uri() . '/js/theme.js',
+		array(),
+		$theme->parent()->get('Version')
+	);
 	wp_enqueue_style('dashicons');
 	if (is_front_page()) {
 		wp_enqueue_script('frontpage-script');
