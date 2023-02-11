@@ -54,6 +54,7 @@ This theme, like WordPress, is licensed under the GPL
     --scrollbar: 0px;
     --gutter: calc((100vw - 100% + var(--scrollbar)) / 2);
     --full-width: calc((100vw));
+    --breakpoint: 900px;
 }
 
 /* LAYOUT */
@@ -148,7 +149,7 @@ a.cart-contents .cart-contents-count,
 
 a.cart-contents,
 .woocommerce a.cart-contents {
-    color: black;
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -166,7 +167,7 @@ a.account::before,
 
 a.account,
 .woocommerce a.account {
-    color: black;
+    color: var(--primary);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -227,7 +228,7 @@ main h1 {
     margin-top: calc(var(--space) * -1);
     padding-top: var(--s2);
     background-color: var(--primary);
-    color: white;
+    color: var(--secondary);
     max-width: var(--full-width);
     width: 100vw;
     margin-left: calc(var(--gutter) * -1);
@@ -239,8 +240,8 @@ main h1 {
 .hero-text {
     margin-top: 0;
     padding-top: var(--space);
-    background-color: black;
-    color: white;
+    background-color: var(--primary);
+    color: var(--secondary);
     padding-bottom: var(--s2);
     max-width: var(--full-width);
     width: 100vw;
@@ -253,7 +254,9 @@ main h1 {
 
 .animated {
     display: flex;
-    min-height: 675px;
+    min-height: max-content;
+    padding-top: var(--s1);
+    padding-bottom: var(--s1);
 }
 
 .animated-subject {
@@ -264,7 +267,7 @@ main h1 {
     flex-grow: 1;
     width: 100%;
     max-width: 1200px;
-    height: 675px;
+    height: auto;
     align-self: center;
     margin: 0 auto;
     animation: 1s circleIn linear forwards;
@@ -297,7 +300,7 @@ main h1 {
     flex-grow: 1;
     width: 100%;
     max-width: 1200px;
-    height: 675px;
+    height: auto;
     align-self: center;
     margin: 0 auto;
     animation: 1s triangleIn linear forwards;
@@ -426,7 +429,7 @@ main h1 {
 
 .woocommerce form .form-row .input-text {
     padding: var(--s-3);
-    border: 2px solid black;
+    border: 2px solid var(--primary);
     border-radius: 5px;
 }
 
@@ -540,6 +543,26 @@ nav.woocommerce-MyAccount-navigation li a:hover {
 /* FOOTER */
 footer.box.site-footer {
     padding: 0;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+footer.box.site-footer a:hover {
+    text-decoration-color: var(--secondary)
+}
+
+footer.box.site-footer a.cart-contents,
+footer.box.site-footer .woocommerce a.cart-contents {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+footer.box.site-footer a.account,
+footer.box.site-footer .woocommerce a.account {
+    color: var(--secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 footer .cluster {
@@ -560,4 +583,14 @@ footer .cluster nav {
 
 footer .cluster nav > * {
     margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    footer.box.site-footer .cluster > div {
+        padding-bottom: 0px;
+    }
+    footer.box.site-footer .cluster nav {
+        width: 100%;
+        padding-top: 0px;
+    }
 }
