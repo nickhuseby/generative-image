@@ -201,7 +201,12 @@ a.account:hover,
         color: var(--accent);
         border: 3px solid var(--accent);
     }
-
+    a.cart-contents .cart-contents-count,
+    .woocommerce a.cart-contents .cart-contents-count,
+    a.account,
+    .woocommerce a.account {
+        justify-content: center;
+    }
 }
 
 /* BODY */
@@ -592,5 +597,11 @@ footer .cluster nav > * {
     footer.box.site-footer .cluster nav {
         width: 100%;
         padding-top: 0px;
+    }
+    footer.box.site-footer a.cart-contents .cart-contents-count,
+    footer.box.site-footer .woocommerce a.cart-contents .cart-contents-count,
+    footer.box.site-footer a.account,
+    footer.box.site-footer .woocommerce a.account {
+        justify-content: flex-start;
     }
 }
