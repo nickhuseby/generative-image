@@ -477,11 +477,11 @@ main h1 {
     border: unset;
     background-color: var(--secondary);
     color: var(--primary);
-    display: unset;
+    display: inline-block;
     position: unset;
     border-radius: 0px;
     margin: 0px;
-    padding: 1em;
+    padding: var(--s-2) var(--s0);
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
