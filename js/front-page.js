@@ -253,6 +253,7 @@
         function entryDraw(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    console.log(entry);
                     Array.from(entry.target.querySelectorAll('.animated-subject')).forEach(el => {
                         el.style.display = 'block';
                     });
@@ -268,8 +269,9 @@
 
     /* INITIALIZATION (EVENT LISTENERS) */
 
-    window.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('load', function () {
         const animatedSVGs = Array.from(document.querySelectorAll('.animated'));
+        // animatedSVGs.forEach(anim => {anim.style.minHeight = `${anim.offsetWidth * 0.5625}px`;});
         createObserver(animatedSVGs);
     });
 

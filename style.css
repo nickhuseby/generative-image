@@ -259,8 +259,8 @@ main h1 {
 
 .animated {
     display: flex;
-    min-height: max-content;
-    padding-top: var(--s1);
+    height: max-content;
+    min-height: calc(min(100vw, var(--measure)) * 0.5625);
     padding-bottom: var(--s1);
 }
 
@@ -272,7 +272,6 @@ main h1 {
     flex-grow: 1;
     width: 100%;
     max-width: 1200px;
-    height: auto;
     align-self: center;
     margin: 0 auto;
     animation: 1s circleIn linear forwards;
@@ -305,7 +304,6 @@ main h1 {
     flex-grow: 1;
     width: 100%;
     max-width: 1200px;
-    height: auto;
     align-self: center;
     margin: 0 auto;
     animation: 1s triangleIn linear forwards;
