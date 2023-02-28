@@ -8,11 +8,12 @@ include get_stylesheet_directory() . '/inc/customizer.php'; // Customizer Option
 include get_stylesheet_directory() . '/inc/wc_customizations.php'; // WC Customizations
 
 function gen_img_register_scripts() {
+	$theme = wp_get_theme();
 	wp_register_script(
 		'frontpage-script',
 		get_stylesheet_directory_uri() . '/js/front-page.js',
 		array(),
-		uniqid()
+		$theme->get('Version')
 	);
 }
 add_action('wp_loaded', 'gen_img_register_scripts');

@@ -3,7 +3,7 @@ Theme Name: Generative Image
 Author: Nick Huseby
 Description: Wordpress/WooCommerce Theme for Generative Image store
 Template: oranaut-base
-Version: 0.1
+Version: 0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: generative-image
@@ -464,6 +464,10 @@ main h1 {
 }
 
 /* PRODUCT */
+
+.woocommerce-product-gallery__wrapper {
+    max-width: none;
+}
 
 .woocommerce div.product .woocommerce-tabs {
     width: 48%;
